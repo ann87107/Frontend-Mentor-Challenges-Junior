@@ -1,0 +1,34 @@
+:root {
+  font-size: 62.5%;
+}
+
+body {
+  background-color: var(--primary-bg-bd);
+  font-family: "Open Sans", sans-serif;
+  line-height: 1.5;
+  color: var(--white);
+}
+
+h1, h2, h3, h4, h5 {
+  line-height: 1.3;
+  font-family: "Raleway", "Open Sans", sans-serif;
+}
+
+a, button {
+  cursor: pointer;
+  color: var(--white);
+  text-decoration: none;
+}
+
+button,
+input {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  border: none;
+}
+
+button:focus,
+input:focus {
+  outline: none;
+}

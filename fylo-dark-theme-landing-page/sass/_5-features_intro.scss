@@ -1,0 +1,210 @@
+.features {
+  @extend %sec-padding;
+
+  &__cards {
+    @extend %flex-basic;
+    flex-wrap: wrap;
+    width: 100rem;
+    margin: 0 auto;
+
+    &--card {
+      height: 21.5rem;
+      width: 36rem;
+      margin: 0 6.5rem 10rem;
+      text-align: center;
+
+      img {
+        height: 10.4rem;
+        width: 10.4rem;
+        object-fit: contain;
+        margin-bottom: 1.6rem;
+      }
+
+      h3 {
+        font-size: font-sizes(medium);
+        margin-bottom: 0.8rem;
+      }
+
+      p {
+        font-size: font-sizes(small);
+        font-weight: font-weights(thin);
+        line-height: 1.8;
+        margin-bottom: 0.8rem;
+      }
+
+      }   
+    }
+  }
+
+.intro {
+  @extend %sec-padding;
+  @extend %flex-basic;
+  flex-wrap: wrap;
+  background-color: var(--primary-bg);
+  padding-bottom: 8rem;
+
+  &__img {
+    width: 46.4rem;
+    object-fit: contain;
+    margin-bottom: 8rem;
+  }
+
+  &__text {
+    margin-left: 8rem;
+
+    h2 {
+      font-size: font-sizes(xlarge);
+      width: 50rem;
+      margin-bottom: 2rem;
+    }
+
+    p {
+      font-size: font-sizes(regular);
+      font-weight: font-weights(thin);
+      width: 56rem;
+      margin-bottom: 1.6rem;
+    }
+
+    a {
+      font-size: font-sizes(regular);
+      font-weight: font-weights(thin);
+      color: var(--cyan);
+      text-decoration: none;
+      position: relative;
+
+      span {
+        position: absolute;
+        bottom: -0.3rem;
+        right: -2rem;
+      }
+    }
+
+    a::after {
+      content: "";
+      background-color: var(--cyan);
+      width: 100%;
+      height: 2px;
+      position: absolute;
+      bottom: -0.8rem;
+      left: 0;
+    }
+
+    a, a::after, i {
+      transition: all 0.3s ease-in-out;
+    }
+
+    a:hover {
+      color: var(--white);
+    }
+
+    a:hover::after {
+      background-color: var(--white);
+    }
+
+    a:hover &--img {
+      color: var(--white);
+    }
+  }
+}
+
+// Break Point: 1150px
+@include media-desktop {
+  .features {
+    padding: 8rem 2rem 5rem;
+    &__cards {
+      width: auto;
+      &--card {
+        margin: 0 3rem 8rem;
+      }
+    }
+  }
+
+  .intro {
+    &__text {
+      margin-left: 0;
+      h2 {
+        font-size: font-sizes(large);
+        width: auto;
+      }
+    }
+  }
+}
+
+// Break Point: 870px
+@include media-btablet {
+  .features {
+    padding: 6rem 4rem 0;
+
+    &__cards {
+      &--card {
+        margin: 0 3rem 8rem;
+
+        h3 {
+          font-size: font-sizes(xregular);
+        }
+      }
+    }
+  }
+
+  .intro {
+    padding: 8rem 4rem 5rem;
+
+    &__img {
+      width: 30.5rem;
+    }
+
+    &__text {
+      text-align: center;
+
+      h2 {
+        font-size: font-sizes(medium);
+        width: auto;
+      }
+
+      p {
+        width: 50rem;
+      }
+    }
+  }
+}
+
+// Break Point: 650px
+@include media-medium {
+  .intro {
+    &__text {
+      p {
+        width: 40rem;
+        font-size: font-sizes(small);
+      }
+      
+      a {
+        font-size: font-sizes(small);
+      }
+    }
+  }
+}
+
+// Break Point: 550px
+@include media-small {
+  .features {
+    padding: 6rem 4rem 4rem;
+  }
+
+  .intro {
+    padding: 6rem 4rem 8rem;
+    &__text {
+      h2 {
+        font-size: font-sizes(xregular);
+      }
+
+      p {
+        width: 30rem;
+      }
+    }
+  }
+}
+
+
+// padding: 10rem 8rem 5rem;
+// padding: 8rem 5rem 5rem;
+// padding: 6rem 4rem 8rem;

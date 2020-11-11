@@ -1,0 +1,74 @@
+// Color
+html {
+    --primary-bg: hsl(218, 28%, 13%);
+    //  intro and email sign up background
+    --primary-bg-bd: hsl(217, 28%, 15%);
+    //  testimonial 
+    --primary-c: hsl(219, 30%, 18%);
+    --primary-ft: hsl(216, 53%, 9%);
+    --primary-h: hsl(219, 30%, 35%);
+    
+    --cyan: hsl(176, 68%, 64%);
+    --blue: hsl(198, 60%, 50%);
+    --graident:  hsl(176, 68%, 64%), hsl(198, 60%, 50%); 
+    --red: hsl(0, 100%, 63%);
+    --white: #fff;
+}
+
+// Font Weights
+$font-weights: (
+  "thin": 300,
+  "regular": 400,
+  "bold": 700
+);
+
+@function font-weights($font-weight){
+  @return map-get($font-weights, $font-weight);
+}
+
+// Font Sizes
+$font-sizes: (
+  "xsmall": 1rem,
+  "small": 1.4rem,
+  "regular": 1.6rem,
+  "xregular": 1.8rem,
+  "medium": 2rem,
+  "slarge": 2.4rem,
+  "large": 3.2rem,
+  "xlarge": 4rem,
+);
+
+@function font-sizes($font-size){
+  @return map-get($font-sizes, $font-size);
+}
+
+// Section Padding
+%main-sec-padding {
+  padding: 8rem 8rem 5rem;
+}
+
+%sec-padding {
+  padding: 10rem 8rem 5rem;
+}
+
+
+// Flex 
+%flex-basic {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+// Break Point
+$break-points: (
+  "small": 550px,
+  "medium": 650px,
+  "stablet": 740px,
+  "btablet": 870px,
+  "sdesktop": 950px,
+  "desktop": 1150px,
+);
+
+@function break-points($break-point){
+  @return map-get($break-points, $break-point);
+}

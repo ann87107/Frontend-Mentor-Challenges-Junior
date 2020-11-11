@@ -1,0 +1,50 @@
+// Break Point: 1300px
+@mixin media-desktop {
+  @media screen and (max-width: break-points(desktop)){
+    @content;
+  }
+}
+
+// Break Point: 950px
+@mixin media-sdesktop {
+  @media screen and (max-width: break-points(sdesktop)){
+    @content;
+  }
+}
+// Break Point: 870px
+@mixin media-btablet {
+  @media screen and (max-width: break-points(btablet)){
+    @content;
+  }
+}
+
+// Break Point: 740px
+@mixin media-stablet {
+  @media screen and (max-width: break-points(stablet)){
+    @content;
+  }
+}
+
+// Break Point: 650px
+@mixin media-medium {
+  @media screen and (max-width: break-points(medium)){
+    @content;
+  }
+}
+
+// Break Point: 550px
+@mixin media-small {
+  @media screen and (max-width: break-points(small)){
+    @content;
+  }
+}
+
+
+
+@import "1-reset";
+@import "2-variables";
+@import "3-utilities";
+@import "4-showcase";
+@import "5-features_intro";
+@import "6-team_sign";
+@import "7-footer";

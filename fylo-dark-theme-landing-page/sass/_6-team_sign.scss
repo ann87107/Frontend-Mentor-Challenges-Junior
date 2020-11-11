@@ -1,0 +1,257 @@
+.team {
+  @extend %sec-padding;
+
+  &__cards {
+    @extend %flex-basic;
+    &--card{
+      background-color: var(--primary-c);
+      border-radius: 0.4rem;
+      width: 36rem;
+      margin: 2rem;
+      padding: 4rem 3rem 3rem;
+      position: relative;
+
+      p {
+        font-size: font-sizes(regular);
+        font-weight: font-weights(thin);
+        line-height: 1.7;
+        margin-bottom: 2.4rem;
+      }
+
+      &__author {
+        display: flex;
+        align-items: center;
+
+        img {
+          border-radius: 50%;
+          height: 2.4rem;
+          width: 2.4rem;
+          margin-right: 1rem;
+        }
+
+        h4, h5 {
+          font-size: font-sizes(small);
+          letter-spacing: 1px;
+        }
+
+        h5 {
+          font-weight: font-weights(thin);
+        }
+      }
+    }
+
+    &--card:first-of-type::before {
+      content: "";
+      background-image: url("../../images/bg-quotes.png");
+      background-repeat: no-repeat;
+      height: 7rem;
+      width: 6rem;
+      object-fit: contain;
+      position: absolute;
+      top: -3.5rem;
+      left: -1.5rem;
+      z-index: -1;
+    }
+  }
+}
+
+.sign-in {
+  @extend %sec-padding;
+  @extend %flex-basic;
+  background-image: linear-gradient(to bottom, 
+  var(--primary-bg-bd) 0%, 
+  var(--primary-bg-bd) 60%,
+  var(--primary-ft) 61%, 
+  var(--primary-ft) 100%);
+
+  &__main {
+    @extend %flex-basic;
+    flex-direction: column;
+    background-color: var(--primary-c);
+    border-radius: 1rem;
+    width: 85rem;
+    text-align: center;
+    padding: 4rem 6rem;
+    position: relative;
+
+
+    h2 {
+      font-size: font-sizes(large);
+      margin-bottom: 1.6rem;
+    }
+
+    p {
+      font-size: font-sizes(small);
+      width: 60rem;
+      margin-bottom: 3.8rem;
+    }
+
+    form {
+      position: relative;
+      @extend %flex-basic;
+      flex-wrap: wrap;
+     
+
+      input {
+        border-radius: 2.4rem;
+        height: 4.8rem;
+        width: 40rem;
+        margin-right: 2rem;
+        margin-bottom: 3rem;
+        padding-left: 2rem;
+        font-size: font-sizes(small);
+        letter-spacing: 1px;
+      }
+
+      button {
+        background-image: linear-gradient(var(--graident));
+        border-radius: 2.4rem;
+        height: 4.8rem;
+        color: var(--white);
+        font-size: font-sizes(small);
+        padding: 0 3rem;
+      }
+
+      button:hover {
+        background: var(--cyan);
+      }
+    }
+  }
+}
+
+.error-message {
+  position: absolute;
+  top: 6rem;
+  left: 2rem;
+  font-size: font-sizes(xsmall);
+  font-weight: font-weights(bold);
+  color: var(--red);
+  letter-spacing: 1px;
+  display: none;
+}
+
+.sign-in__main--form.error .error-message {
+  display: block;
+}
+
+// Break Point: 950px
+@include media-sdesktop {
+  .team {
+    &__cards {
+      flex-wrap: wrap;
+
+      &--card {
+        width: 50rem;
+        margin: 0;
+        margin-bottom: 3rem;
+      }
+    }
+  }
+
+  .sign-in {
+    padding: 8rem 5rem 5rem;
+    
+    &__main {
+      padding: 4rem 8rem;
+
+      p {
+        width: auto;
+        margin-bottom: 3.2rem;
+      }
+
+      form {
+        input {
+          width: 40rem;
+          margin-right: 0;
+        }
+
+        button {
+          width: 40rem;
+        }
+      }
+    }  
+  }
+  .error-message {
+    top: 5rem;
+    right: 25%;
+    font-weight: font-weights(regular);
+  }
+}
+
+// Break Point: 650px
+@include media-medium {
+  .team {
+    &__cards {
+      &--card {
+        width: 40rem;
+        margin: 0;
+        margin-bottom: 2.4rem;
+
+        p {
+          font-size: font-sizes(small);
+        }
+
+        &__author {
+          h4, h5 {
+            font-size: font-sizes(xsmall);
+          }
+        }
+      }
+    }
+  }
+
+  .sign-in {
+    &__main {
+      width: 50rem;
+      padding: 4rem;
+
+      h2 {
+        font-size: font-sizes(medium);
+      }
+
+      form {
+        input,
+        button {
+          width: 30rem;
+        }
+
+      }
+    }
+  }
+
+  
+}
+
+// Break Point: 550px
+@include media-small {
+  .team {
+    padding: 6rem 4rem 4rem;
+    &__cards {
+      &--card{
+        width: 30rem;
+      
+      }
+    }
+  }
+
+  .sign-in {
+    padding: 6rem 4rem;
+
+    &__main {
+      width: 32rem;
+    }
+
+    form {
+      input,
+      button {
+        width: 25rem;
+      }
+
+    }
+  }
+
+  .error-message {
+    left: 3rem;
+  }
+}
+
